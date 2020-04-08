@@ -1,0 +1,15 @@
+# Pipenv
+**/Pipfile.lock
+
+# Test db
+**/db.sqlite3
+
+# pycache
+**/__pycache__/
+
+# migrations
+**/migrations/**
+!__init__.py
+
+# static files
+**/static/
