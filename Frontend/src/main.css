@@ -1,0 +1,161 @@
+.navbar-seperation {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-bg {
+  background-color: #B3E8BA;
+}
+
+.nav-link {
+  color: #050203!important;
+}
+
+.welcome-section {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-header {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.welcome-page-subtitle {
+  font-size: 3.3rem;
+  font-weight: bold;
+  text-align: center;
+  margin: auto 10%;
+}
+
+.x-ray-btn {
+  width: 250px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #B3E8BA;
+  color: #050203;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: auto 2%;
+}
+
+.have-X-ray-section {
+  margin: 175px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.have-x-ray-button-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.have-x-ray-header {
+    font-size: 3.3rem;
+    font-weight: bold;
+}
+
+.have-x-ray-statement {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.about-statement-section {
+  margin: 100px 10% 0px 10%;
+  font-size: 2rem;
+}
+
+.upload-x-ray-section {
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-for-x-ray {
+  display: flex;
+  flex-direction: column;
+}
+
+.x-ray-submit-btn {
+  margin-top: 25px;
+  width: 250px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #B3E8BA;
+  color: #050203;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.x-ray-upload {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-x-ray-statement {
+  font-size: 1.7rem;
+}
+
+
+.contact-page-subtitle {
+  margin: 50px 10% 0px 10%;
+  font-size: 1.5rem;
+}
+
+.message-us-section {
+  margin: 150px 15% 100px 15%;
+}
+
+.message-us-header {
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: bold;
+}
+
+.message-us-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-us-form label {
+  margin-top: 50px;
+  font-size: 1.5rem;
+}
+
+.email-input {
+  height: 40px;
+  width: 270px;
+}
+
+.message-input {
+  width: 90%;
+  height: 300px;
+}
+
+.message-send-btn {
+  margin-top: 35px;
+  width: 250px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #B3E8BA;
+  color: #050203;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
