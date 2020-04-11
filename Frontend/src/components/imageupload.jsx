@@ -50,7 +50,7 @@ class Imageupload extends React.Component {
   <p className="upload-x-ray-statement">Upload Your X-Ray to Find the Probability of Pneumonia</p>
   <form className="form-for-x-ray" target="uploadfiles.php" method="post" enctype="multipart/form-data">
   <input className="x-ray-upload" name="xRayUpload" type="file" id="image" accept="image/png, image/jpeg, image/jpg" onChange={this.handleImageChange} required/>
-  <input className="x-ray-submit-btn" type="submit" value="Upload" onSubmit={this.handleSubmit} />
+  <input className="x-ray-submit-btn" type="submit" value="Upload" onClick={this.handleSubmit} />
 </form>
 </div>
 
