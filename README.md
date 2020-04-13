@@ -30,6 +30,7 @@ The following command will build the Docker image with the test user username as
 ### Without Build Arguments
 
 The following command will build the Docker image with the default test user credentials.
+
 `docker build -t mlpda_app /path/to/source_folder`
 
 ## Run the Docker Image
