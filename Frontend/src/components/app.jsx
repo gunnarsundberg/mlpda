@@ -33,7 +33,6 @@ class App extends React.Component {
   <p className="have-x-ray-statement">Login or Sign Up if your patient has Pneumonia</p>
   <div className="have-x-ray-button-section">
     <Link to="/login" className="btn btn-primary x-ray-btn login-btn" role="button">Login</Link>
-    <a className="btn btn-primary x-ray-btn " role="button">Sign Up</a>
   </div>
   </div>
 

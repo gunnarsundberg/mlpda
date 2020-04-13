@@ -13,3 +13,9 @@
 
 # static files
 **/static/
+
+#virtual environments
+venv
+
+#vs code files
+.vscode
