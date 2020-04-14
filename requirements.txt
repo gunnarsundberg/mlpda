@@ -1,0 +1,9 @@
+gunicorn
+django
+psycopg2-binary
+djangorestframework
+django-custom-user
+pillow
+tensorflow
+numpy
+opencv-python

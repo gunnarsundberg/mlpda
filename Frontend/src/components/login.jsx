@@ -1,8 +1,34 @@
 import React from 'react';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Link, BrowserRouter as Router, Redirect } from 'react-router-dom';
 import '../main.css';
+import Axios from 'axios';
 class Login extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      loggedIn: false
+    }
+  }
+
+  LoginSubmit = (e) => {
+    e.preventDefault();
+    let username = document.getElementById("email").value;
+    let password = document.getElementById("pass").value;
+
+    let url = "http://127.0.0.1:8000/api/v1/auth/";
+
+    Axios.post(url, {'username':username, 'password':password, 'crossdomain': true})
+      .then(res => {
+        document.cookie = 'auth_token=' + res.data['token'];
+        this.setState({loggedIn: true});
+      });
+
+  }
   render() {
+    if(this.state.loggedIn){
+      return <Redirect to="/"/>
+    }
     return(
 <div>
 
@@ -11,11 +37,11 @@ class Login extends React.Component {
 <div className="message-us-section">
   <p className="message-us-header">Login</p>
   <form className="message-us-form">
-    <label for="email">Email</label>
-    <input type="text" className="email-input"  name="email"/>
-    <label for="email">Password</label>
-    <input type="text" className="email-input"  name="email"/>
-    <input className="message-send-btn" type="submit" value="Submit"/>
+    <label htmlFor="email">Email</label>
+    <input type="text" className="email-input" id="email" name="email"/>
+    <label htmlFor="password">Password</label>
+    <input type="password" className="password-input" id="pass" name="password"/>
+    <input className="message-send-btn" type="submit" value="Submit" onClick={this.LoginSubmit}/>
   </form>
 </div>
 

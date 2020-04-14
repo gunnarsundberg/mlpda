@@ -25,8 +25,7 @@ the lungs.</p>
   <p className="have-x-ray-header">Have an X-Ray?</p>
   <p className="have-x-ray-statement">Login or Sign Up if your patient has Pneumonia</p>
   <div className="have-x-ray-button-section">
-    <a className="btn btn-primary x-ray-btn login-btn" href="#" role="button">Login</a>
-    <a className="btn btn-primary x-ray-btn" href="#" role="button">Sign Up</a>
+    <Link to="/login" className="btn btn-primary x-ray-btn login-btn" role="button">Login</Link>
   </div>
 </div>
 

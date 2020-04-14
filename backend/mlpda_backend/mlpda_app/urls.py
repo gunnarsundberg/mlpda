@@ -11,6 +11,6 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    url(r'^auth/', views.obtain_auth_token),
+    url(r'^auth/', mlpda_app.views.CustomAuthView.as_view()),
     url(r'^predict/', mlpda_app.views.MyUploadView.as_view())
 ]

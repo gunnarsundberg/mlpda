@@ -36,6 +36,11 @@ const routing = (
         <Link className="nav-link" to ="/imageupload">Imageupload</Link>
         <button className="navbar-toggler"  type="button" data-toggle="collapse" to="/about" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"/>
        </li>
+
+       <li className="nav-item">
+       <Link className="nav-link" to ="/login">Login</Link>
+       <button className="navbar-toggler"  type="button" data-toggle="collapse" to="/login" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"/>
+      </li>
        </ul>
       </div>
       </nav>

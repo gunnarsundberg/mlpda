@@ -1,41 +1,54 @@
 import React from 'react'
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Link, BrowserRouter as Router, Redirect } from 'react-router-dom';
 import '../main.css';
 import Image from '../image_upload_doctor.jpeg';
 import axios from 'axios';
 class Imageupload extends React.Component {
 
   state = {
-    Token: 'f2c2d02731aab9e6923eeee7018f31341240cf1d',
-    image: null
+      file: undefined
   };
 
     handleImageChange = (e) => {
     this.setState({
-      image: e.target.files[0]
+      file: e.target.files[0]
     })
   };
 
+  getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
   handleSubmit = (e) => {
    e.preventDefault();
-   console.log(this.state);
    let form_data = new FormData();
-   form_data.append('image', this.state.image, this.state.image.name);
+   form_data.append('file', this.state.file, this.state.file.name);
    let url = 'http://127.0.0.1:8000/api/v1/predict/';
    axios.post(url, form_data, {
      headers: {
-       'Token': 'f2c2d02731aab9e6923eeee7018f31341240cf1d',
-       'content-type': 'multipart/form-data'
+       'Authorization': "Token " + this.getCookie("auth_token"),
+       'Content-Type': 'multipart/form-data'
      }
    })
        .then(res => {
-         console.log(res.data);
+         alert(res.data[0]['prediction']);
        })
        .catch(err => console.log(err))
 
 
   };
-
 
 
   render() {
@@ -48,9 +61,10 @@ class Imageupload extends React.Component {
 
 <div className="upload-x-ray-section">
   <p className="upload-x-ray-statement">Upload Your X-Ray to Find the Probability of Pneumonia</p>
+  <p style={{color: 'red', visibility: this.getCookie("auth_token") == "" ? 'visible':'hidden'}}>You must be logged in to use this feature</p>
   <form className="form-for-x-ray" target="uploadfiles.php" method="post" enctype="multipart/form-data">
   <input className="x-ray-upload" name="xRayUpload" type="file" id="image" accept="image/png, image/jpeg, image/jpg" onChange={this.handleImageChange} required/>
-  <input className="x-ray-submit-btn" type="submit" value="Upload" onClick={this.handleSubmit} />
+  <input className="x-ray-submit-btn" type="submit" value="Upload" onClick={this.handleSubmit} disabled={this.getCookie("auth_token") == "" || this.state.file == undefined ? true:false}/>
 </form>
 </div>
 

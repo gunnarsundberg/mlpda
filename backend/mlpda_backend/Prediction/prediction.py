@@ -91,8 +91,12 @@ def predict_from_image(image, model_path, run_debug=False):
     prediction_results TYPE:STRING
     DESCRIPTION: A string containing the prediction results
     '''
-       #Create a labels dictionary based on the values the model could return.
+    #Create a labels dictionary based on the values the model could return.
     label_dict = {0: "NORMAL", 1: "PNEUMONIA"}
+
+    if run_debug:
+        print("Image to ndarray...")
+    image = np.array(image)
 
     if run_debug:
         print("Resizing Image to (256,256) ")
