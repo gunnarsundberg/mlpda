@@ -25,6 +25,8 @@ RUN chown -R www-data:www-data /MLPDA
 
 WORKDIR /MLPDA/src/backend/mlpda_backend/
 
+RUN sed -i.bak 's/\r$//' launch_server.sh
+
 RUN chmod +x launch_server.sh
 
 RUN python3 manage.py makemigrations
